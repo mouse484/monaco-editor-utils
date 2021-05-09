@@ -1,0 +1,18 @@
+{
+  "name": "html",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "preview": "serve"
+  },
+  "dependencies": {
+    "@monaco-editor/loader": "^1.0.1",
+    "rollup": "^2.47.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^13.0.0",
+    "serve": "^11.3.2"
+  }
+}

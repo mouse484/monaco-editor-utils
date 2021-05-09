@@ -24,4 +24,4 @@ jobs:
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: yarn run multi-semantic-release
+        run: yarn run multi-semantic-release --ignore-packages=examples/*
