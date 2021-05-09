@@ -1,0 +1,5 @@
+{
+  "name": "rollup-plugin-monaco-editor",
+  "main": "index.js",
+  "license": "MIT"
+}
