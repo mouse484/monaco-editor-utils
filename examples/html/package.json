@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "@monaco-editor/loader": "^1.0.1",
-    "rollup": "^2.47.0"
+    "rollup": "^2.47.0",
+    "vscode-theme-monaco": "link:./packages/vscode-theme-monaco"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^13.0.0",

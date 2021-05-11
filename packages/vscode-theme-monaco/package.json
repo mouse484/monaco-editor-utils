@@ -1,0 +1,20 @@
+{
+  "name": "vscode-theme-monaco",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "dependencies": {
+    "monaco-editor-textmate": "link:./packages/monaco-editor-textmate",
+    "monaco-textmate": "^3.0.1",
+    "onigasm": "^2.2.5"
+  },
+  "devDependencies": {
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-typescript": "^8.2.1",
+    "@rollup/plugin-wasm": "^5.1.2",
+    "rollup-plugin-node-polyfills": "^0.2.1"
+  }
+}
