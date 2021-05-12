@@ -3,9 +3,9 @@ import { setTheme, textmate } from "vscode-theme-monaco"
 
 loader.init().then(monaco => {
   setTheme(monaco)
-  monaco.editor.create(document.getElementById("container"), {
+  const editor = monaco.editor.create(document.getElementById("container"), {
     value: ["function x() {", '\tconsole.log("Hello world!");', "}"].join("\n"),
     language: "javascript",
   });
-  textmate()
+  textmate(monaco, editor)
 });

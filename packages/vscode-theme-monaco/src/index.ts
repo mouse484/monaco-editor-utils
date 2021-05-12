@@ -5,8 +5,6 @@ import { loadWASM } from 'onigasm';
 import { Registry } from 'monaco-textmate';
 import { wireTmGrammars } from 'monaco-editor-textmate';
 
-import 'onigasm/lib/onigasm.wasm';
-
 export const setTheme = (
   monaco: typeof import('/workspace/monaco-editor-utils/node_modules/monaco-editor/esm/vs/editor/editor.api')
 ) => {
@@ -21,6 +19,8 @@ export const textmate = async (
   monaco: typeof import('/workspace/monaco-editor-utils/node_modules/monaco-editor/esm/vs/editor/editor.api'),
   editor: editor.ICodeEditor
 ) => {
+  await loadWASM('./onigasm.wasm');
+
   const grammars = new Map<string, string>().set('typescript', 'source.ts');
 
   const registry = new Registry({
@@ -28,10 +28,13 @@ export const textmate = async (
       if (scopeName === 'source.ts') {
         return {
           format: 'plist',
-          content: await // https://github.com/microsoft/TypeScript-TmLanguage/blob/master/TypeScript.tmLanguage
-          (
-            await fetch('./src/lib/monaco/grammars/TypeScript.tmLanguage.plist')
-          ).text(),
+          content:
+            await // https://github.com/microsoft/TypeScript-TmLanguage/blob/master/TypeScript.tmLanguage
+            (
+              await fetch(
+                './TypeScript.tmLanguage.plist'
+              )
+            ).text(),
         };
       }
     },
