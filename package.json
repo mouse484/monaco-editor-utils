@@ -1,6 +1,8 @@
 {
   "name": "monaco-editor-utils",
-  "scripts": {},
+  "scripts": {
+    
+  },
   "devDependencies": {
     "@qiwi/multi-semantic-release": "^3.14.2",
     "commitizen": "^4.2.4",
